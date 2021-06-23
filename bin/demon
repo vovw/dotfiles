@@ -1,0 +1,8 @@
+#!/bin/sh
+
+dmenu_run -i \
+    -nb "#babbbd" \
+    -nf "#24292e" \
+    -sb "#24292e" \
+    -sf "#babbbd" \
+    -fn "FiraCode-20"
