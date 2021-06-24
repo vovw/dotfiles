@@ -1,6 +1,0 @@
-#!/bin/sh
-
-xrdb ~/.Xresources &
-~/readxcolors
-
-~/.sowm/autostart.sh &

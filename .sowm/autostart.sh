@@ -1,5 +1,5 @@
 . "/home/voidz/readxcolors"
 
-xsetroot -solid "$color7"
+xsetroot -solid "$background"
 
 /home/voidz/.config/lemonbar/launch.sh &

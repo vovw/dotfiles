@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
 call plug#end()
 
-set clipboard+=unnamedplus
 set nobackup noswapfile   " No backup file , No swap file
 
 set expandtab             " Use spaces instead of tabs.

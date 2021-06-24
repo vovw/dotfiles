@@ -1,7 +1,13 @@
 #!/bin/bash
 
 function Flex {
-    echo -e " \uf2dc" "voidz" 
+    #echo -e " \uf2dc" "voidz" 
+    echo -e " voidz" 
+}
+
+function vol {  
+    volume="$(pamixer --get-volume)"
+    echo -e "\uf026" "$volume"
 }
 
 function p_time {
@@ -18,7 +24,7 @@ function battery {
 
 function work {
     echo -e "%{l}$(Flex) %{c}$(p_time)%{r}$(battery) "
-    sleep 2s
+    sleep 1s
 }
 while true;do
     work
