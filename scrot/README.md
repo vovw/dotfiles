@@ -1,2 +1,2 @@
-## some screen shotzzz for [r/unixporn](reddit.com/r/unixporn)  ^_^
+## some screen shotzzz for [r/unixporn](https://reddit.com/r/unixporn)  ^_^
 
