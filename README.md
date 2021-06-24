@@ -1,5 +1,5 @@
 # dotfilez
 
-**Screenshots: [link](https://www.reddit.com/r/unixporn/search?q=author%3Adylan112&sort=new&restrict_sr=on&t=all)**
+**Screenshots: [link](https://github.com/voidz7/dotfiles/blob/master/scrot/README.md)**
 
 ![scrot](https://raw.githubusercontent.com/voidz7/dotfiles/master/scrot/busy-scrot.png)
