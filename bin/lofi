@@ -1,4 +1,0 @@
-#!/bin/sh
-
-url="https://coderadio-relay-nyc.freecodecamp.org/radio/8010/low.mp3"
-pkill -f $url || mpv "$url"
