@@ -14,9 +14,7 @@ alias vi="nvim"
 alias dot="cd ~/dotfiles/"
 alias suck="sudo make clean install && sudo rm config.h sowm"
 
-export PS1="-> "
 export PF_INFO="title os host wm uptime pkgs shell editor memory palette"
-pfetch
 
 
 Red="$(tput bold)$(tput setaf 1)"      # Red
