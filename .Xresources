@@ -20,6 +20,7 @@ URxvt.pointerBlank: true
 
 !--colors--!
 *.foreground:  #bbbbbb
+!*.background:  [90]#121212
 *.background:  #121212
 *.cursorColor: #bbbbbb
 !
