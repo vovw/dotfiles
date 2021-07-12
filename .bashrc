@@ -1,5 +1,9 @@
 #!/bin/sh
 
+Red="$(tput bold)$(tput setaf 1)"      # Red
+Yellow="$(tput bold)$(tput setaf 3)"   # Yellow
+export PS1='\[$Red\]♥ \[$Red\]\W \[$Yellow\]\$\[\e[0m\] '
+
 export EDITOR=nvim
 export VISUAL=$EDITOR
 export BROWSER=firefox
@@ -15,13 +19,4 @@ alias dot="cd ~/dotfiles/"
 alias suck="sudo make clean install && sudo rm config.h sowm"
 
 export PF_INFO="title os host wm uptime pkgs shell editor memory palette"
-
-
-Red="$(tput bold)$(tput setaf 1)"      # Red
-Yellow="$(tput bold)$(tput setaf 3)"   # Yellow
-
-normalHeart=$Red    # Color for the heart
-normalCDire=$Red    # Color for the current directory
-normalDolar=$Yellow # Color for primary prompt string $
-
-export PS1='\[$normalHeart\]♥ \[$normalCDire\]\W \[$Yellow\]\$\[\e[0m\] '
+pfetch
