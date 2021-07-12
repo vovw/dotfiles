@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
     Plug 'tomasr/molokai'
-    "Plug 'voidz7/nita.vim'
-    Plug '~/code/nita.vim'
+    Plug 'voidz7/nita.vim'
 call plug#end()
 
 colorscheme molokai
