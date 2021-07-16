@@ -14,8 +14,6 @@ URxvt.internalBorder:  30
 URxvt*termName: xterm-256color
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-URxvt.iso14755: false
-URxvt.iso14755_52: false
 URxvt.pointerBlank: true
 
 !--colorz--!
@@ -38,4 +36,3 @@ URxvt.pointerBlank: true
 *color14: #85e8ed
 *color7: #e8e8e8
 *color15: #e8e8e8
-
