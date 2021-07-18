@@ -1,0 +1,88 @@
+#
+# i3-gaps config
+#
+
+set $mod Mod4
+set $term xst
+set $size 40
+
+floating_modifier $mod
+
+default_border pixel 4
+
+set $fg_focus   #ffffff
+set $bg_focus   #ffffff
+set $fg_unfocus #ffffff
+set $bg_unfocus #ffffff
+
+#                        Border       Background   Foreground   Indicator    Child Border
+client.focused           $bg_focus    $bg_focus    $fg_focus    $bg_focus    $bg_focus
+client.unfocused         $bg_unfocus  $bg_unfocus  $fg_unfocus  $bg_unfocus  $bg_unfocus
+client.focused_inactive  $bg_unfocus  $bg_unfocus  $fg_unfocus  $bg_unfocus  $bg_unfocus
+client.urgent            $bg_focus    $bg_focus    $fg_focus    $bg_focus    $bg_focus
+
+
+title_align center
+for_window [class=".*"] title_format "<b>%title</b>"
+
+
+bindsym Mod1+Tab focus next
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Quit i3?' -B 'Yes, exit i3' 'i3-msg exit'"
+
+
+bindsym $mod+Return exec --no-startup-id $term
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+x exec i3lock -c "#ffffff'
+
+bindsym $mod+p exec krot
+bindsym $mod+d exec demon
+bindsym $mod+c move position center
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+Control+h focus left
+bindsym $mod+Control+j focus down
+bindsym $mod+Control+k focus up
+bindsym $mod+Control+l focus right
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+
+bindsym $mod+Shift+h resize shrink width $size px
+bindsym $mod+Shift+j resize grow height $size px
+bindsym $mod+Shift+k resize shrink height $size px
+bindsym $mod+Shift+l resize grow width $size px
+
+bindsym $mod+h move left 
+bindsym $mod+j move down
+bindsym $mod+k move up
+bindsym $mod+l move right 
+
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
+bindsym XF86AudioMute exec pamixer -t
+bindsym XF86AudioLowerVolume exec pamixer -d 5
+bindsym XF86AudioRaiseVolume exec pamixer -i 5
+
+for_window [class=".*"] floating enable
