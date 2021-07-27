@@ -1,0 +1,83 @@
+# vars
+set $mod Mod4
+set $alt Mod1
+set $term alacritty
+set $browser chromium
+set $wal /home/voidz/Pictures/wal.jpg
+
+# theming
+
+default_border pixel 3
+default_floating_border pixel 3
+output * bg $wal fill
+client.focused #b09d9d #b09d9d #b09d9d
+client.unfocused #b09d9d #b09d9d #b09d9d
+
+# inputs
+input type:keyboard {
+    repeat_delay 200
+    repeat_rate 50
+}
+
+input "2:7:SynPS/2_Synaptics_TouchPad" {
+	tap enable
+	natural_scroll disable
+}
+
+
+# make sway basically a floating compositor
+for_window [app_id=".*"] floating enable
+
+# keybinds
+bindsym $mod+Return exec $term
+bindsym $mod+w exec $browser
+bindsym $mod+f fullscreen
+bindsym Print exec grim
+bindsym $mod+s floating toggle
+
+floating_modifier $mod normal
+focus_follows_mouse always
+
+bindsym $mod+c move position center
+bindsym $mod+Shift+e exit
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+c reload
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+
+
+
+# trial stuff
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy | notify-send "Shot taken!"
+
+#change focus 
+bindsym $mod+$alt focus next
+
+#move focus window 
+bindsym $mod+h move left
+bindsym $mod+j move down
+bindsym $mod+k move up
+bindsym $mod+l move right
+
+
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always --no-startup-id dunst
+mode "resize" {
+    bindsym h resize shrink width 10px
+    bindsym j resize grow height 10px
+    bindsym k resize shrink height 10px
+    bindsym l resize grow width 10px
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
