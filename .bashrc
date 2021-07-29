@@ -5,7 +5,6 @@ Yellow="$(tput bold)$(tput setaf 3)"   # Yellow
 export PS1='\[$Red\]♥ \[$Red\]\W \[$Yellow\]\$\[\e[0m\] '
 
 export SHEE_IGNORE_DIRS=.git:node_modules:build:.cache
-
 export HISTFILESIZE=10000
 export HISTFILE=~/.bash_history
 

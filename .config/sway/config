@@ -58,7 +58,7 @@ bindsym $mod+Shift+4 move container to workspace number 4
 bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy | notify-send "Shot taken!"
 
 #change focus 
-bindsym $mod+$alt focus next
+bindsym $mod+$alt focus next 
 
 #move focus window 
 bindsym $mod+h move left
@@ -66,18 +66,10 @@ bindsym $mod+j move down
 bindsym $mod+k move up
 bindsym $mod+l move right
 
-
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always --no-startup-id /usr/lib/polkit-1/polkitd
 exec_always --no-startup-id dunst
-mode "resize" {
-    bindsym h resize shrink width 10px
-    bindsym j resize grow height 10px
-    bindsym k resize shrink height 10px
-    bindsym l resize grow width 10px
 
-    # return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
-
+bindsym $alt+h resize shrink width 10px
+bindsym $alt+j resize grow height 10px
+bindsym $alt+k resize shrink height 10px
+bindsym $alt+l resize grow width 10px

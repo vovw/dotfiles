@@ -4,11 +4,11 @@ window:
     y: 30
 font:
   normal:
-    family: Iosevka 
+    family: Cascadia Mono
   bold:
-    family: Iosevka 
+    family: Cascadia Mono
   italic:
-    family: Iosevka
+    family: Cascadia Mono
   size: 12
 
 colors:
