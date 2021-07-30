@@ -1,17 +1,18 @@
 # vars
 set $mod Mod4
 set $alt Mod1
-set $term alacritty
-set $browser chromium
-set $wal /home/voidz/Pictures/wal.jpg
+set $term foot
+set $browser firefox-wayland
+set $wal /home/voidz/Pictures/wither.jpg
+set $colo #4c4c4c
 
 # theming
 
-default_border pixel 3
-default_floating_border pixel 3
 output * bg $wal fill
-client.focused #b09d9d #b09d9d #b09d9d
-client.unfocused #b09d9d #b09d9d #b09d9d
+titlebar_padding 15
+
+client.focused $colo $colo $colo $colo $colo
+client.unfocused $colo $colo $colo $colo $colo
 
 # inputs
 input type:keyboard {
@@ -19,9 +20,10 @@ input type:keyboard {
     repeat_rate 50
 }
 
-input "2:7:SynPS/2_Synaptics_TouchPad" {
-	tap enable
-	natural_scroll disable
+input "1739:32521:Synaptics_TM3252-001" {
+       dwt enabled
+       tap enabled
+       middle_emulation enabled
 }
 
 
@@ -32,13 +34,13 @@ for_window [app_id=".*"] floating enable
 bindsym $mod+Return exec $term
 bindsym $mod+w exec $browser
 bindsym $mod+f fullscreen
-bindsym Print exec grim
 bindsym $mod+s floating toggle
+bindsym $mod+c move position center
+
 
 floating_modifier $mod normal
 focus_follows_mouse always
 
-bindsym $mod+c move position center
 bindsym $mod+Shift+e exit
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
@@ -52,13 +54,15 @@ bindsym $mod+Shift+2 move container to workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3
 bindsym $mod+Shift+4 move container to workspace number 4
 
+##scrot utils
+bindsym print exec grim - | swappy -f -
+bindsym Shift+print exec grim -g "$(slurp)" - | swappy -f -
 
-
-# trial stuff
-bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy | notify-send "Shot taken!"
-
-#change focus 
-bindsym $mod+$alt focus next 
+##change focus 
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 #move focus window 
 bindsym $mod+h move left
@@ -73,3 +77,7 @@ bindsym $alt+h resize shrink width 10px
 bindsym $alt+j resize grow height 10px
 bindsym $alt+k resize shrink height 10px
 bindsym $alt+l resize grow width 10px
+
+bindsym XF86AudioRaiseVolume exec pamixer -i 10 
+bindsym XF86AudioLowerVolume exec pamixer -d 10 
+bindsym XF86AudioMute exec pamixer -t 
