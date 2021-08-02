@@ -1,0 +1,8 @@
+#!/bin/sh
+
+dmenu_run -i \
+    -nb "#0f0f0f" \
+    -nf "#262626" \
+    -sb "#0f0f0f" \
+    -sf "#ac8a8c" \
+    -fn "Cascadia Mono-16"
