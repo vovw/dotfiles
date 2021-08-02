@@ -1,0 +1,58 @@
+# .cwmrc
+
+sticky yes
+snapdist 4
+unbind-key all
+
+# font 
+fontname "Cascadia Mono:style=Regular:size=12"
+
+# groups
+bind-key 4-1 group-only-1
+bind-key 4-2 group-only-2
+bind-key 4-3 group-only-3
+bind-key 4-4 group-only-4
+bind-key 4-5 group-only-5
+bind-key 4S-1 window-movetogroup-1
+bind-key 4S-2 window-movetogroup-2
+bind-key 4S-3 window-movetogroup-3
+bind-key 4S-4 window-movetogroup-4
+bind-key 4S-5 window-movetogroup-5
+
+# execs
+bind-key 4-Return 'urxvt'
+bind-key CS-Print "/home/icy/bin/scr -s"
+bind-key C-Print "/home/icy/bin/scr -f"
+bind-key 4-n "urxvt -e nvim /home/voidz/notes/"
+
+# keybinds
+bind-key 4-space menu-exec
+bind-key 4-d demon
+bind-key M-Tab window-cycle
+bind-key 4-Tab group-cycle
+
+bind-key 4S-q window-close
+bind-key 4-f window-maximize
+bind-key 4S-o window-snap-left
+bind-key 4S-p window-snap-right 
+bind-key 4S-r restart
+bind-key 4S-e quit
+bind-key 4S-b window-vmaximize
+
+# mousebinds
+unbind-mouse all
+
+bind-mouse 4S-1 window-resize
+bind-mouse 4-1 window-move
+bind-mouse 4-2 window-lower
+
+# other
+borderwidth 0
+snapdist 10
+gap 0 0 0 0
+
+# colors
+color menufg  "#f0f0f0"
+color menubg  "#0f0f0f"
+color font    "#f0f0f0"
+color selfont "#0f0f0f"
