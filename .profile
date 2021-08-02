@@ -1,8 +1,6 @@
-#############
-# .profile  #
-#############
-
-SHEE_IGNORE_DIRS=.git:node_modules:build
-
-PATH=~/bin:~/.local/bin:$PATH
-ENV=~/.bashrc
+##############
+# `.profile` #
+##############
+source ~/.bashrc
+export PATH=~/bin:~/.local/bin:$PATH
+export ENV=~/.bashrc

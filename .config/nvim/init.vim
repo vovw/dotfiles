@@ -1,9 +1,12 @@
 call plug#begin('~/.vim/plugged')
     Plug 'ap/vim-css-color'
     Plug 'voidz7/rita.vim' " port of mountain-theme/vim
+    Plug 'thepogsupreme/mountain.nvim'
 call plug#end()
 
-colorscheme rita
+colorscheme mountain
+
+inoremap jk <Esc>
 
 set cursorline 
 set hlsearch

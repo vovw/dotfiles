@@ -1,0 +1,32 @@
+! vim:ft=xdefaults:
+
+!font
+*.font: xft:Cascadia Mono:size=12
+
+!colors
+*.foreground: #f0f0f0
+*.background: #0f0f0f
+*.color0:     #262626
+*.color1:     #ac8a8c
+*.color2:     #8aac8b
+*.color3:     #aca98a
+*.color4:     #8f8aac
+*.color5:     #ac8aac
+*.color6:     #8aabac
+*.color7:     #e7e7e7
+*.color8:     #4c4c4c
+*.color9:     #c49ea0
+*.color10:    #9ec49f
+*.color11:    #c4c19e
+*.color12:    #a39ec4
+*.color13:    #c49ec4
+*.color14:    #9ec3c4
+*.color15:    #f5f5f5
+
+!xft
+Xft.antialias:	1
+Xft.hinting:	1
+Xft.autohint:	0
+Xft.hintstyle:	hintslight
+Xft.rgba:	rgb
+Xft.lcdfilter:	lcddefault
