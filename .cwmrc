@@ -3,12 +3,10 @@
 ##########
 
 
-
-
 ## settings
 borderwidth 2
 snapdist 10
-gap 1 1 1 1
+gap 10 10 10 10
 sticky yes
 snapdist 4
 unbind-key all
@@ -16,18 +14,16 @@ moveamount 10
 fontname "Cascadia Mono:style=Regular:size=12"
 
 ## execs
-bind-key 4-Return "alacritty"
-bind-key 4-d "demon"
-bind-key Print "screenshot.sh --full"
-bind-key S-Print "screenshot.sh --part"
-bind-key CS-Print "maim -i $(xdotool getactivewindow) ~/mypicture.jpg"
-bind-key 4-n "alacritty -e nvim /home/voidz/notes/"
+bind-key 4-Return       "alacritty"
+bind-key M-Return       "alacritty -e tmux"
+bind-key 4-n            "alacritty -e nvim /home/voidz/notes/"
 
-## spawen
-autogroup	2 	firefox
-autogroup	3 	zathura
-autogroup	4 	mpv
+bind-key Print          ""
+bind-key S-Print        "scrot -q 100"
+bind-key C-Print        "maim -m 10 ~/scrot.png"
 
+bind-key 4-d           "dmenu_run -i -nb '#0f0f0f' -nf '#262626' -sb '#0f0f0f' -sf '#ac8a8c' -fn 'Cascadia Mono-16'"
+bind-key 4-comma        menu-exec
 
 ## groups
 bind-key 4-1 group-only-1
@@ -35,26 +31,28 @@ bind-key 4-2 group-only-2
 bind-key 4-3 group-only-3
 bind-key 4-8 group-only-4
 bind-key 4-9 group-only-5
+bind-key 4-0 group-only-6
 bind-key 4S-1 window-movetogroup-1
 bind-key 4S-2 window-movetogroup-2
 bind-key 4S-3 window-movetogroup-3
 bind-key 4S-8 window-movetogroup-4
 bind-key 4S-9 window-movetogroup-5
+bind-key 4S-0 window-movetogroup-6
 
 
-# keybinds
-bind-key 4-space menu-exec
-bind-key M-Tab window-cycle
-bind-key 4-Tab group-cycle
+## keybinds
+bind-key M-Tab      window-cycle
+bind-key 4-Tab      group-cycle
 
-bind-key 4-f window-maximize
-bind-key 4-o window-snap-left
-bind-key 4-p window-snap-right 
-bind-key 4S-q window-close
+bind-key 4-f        window-maximize
+bind-key 4-space    window-fullscreen
+bind-key 4-o        window-snap-left
+bind-key 4-p        window-snap-right 
+bind-key 4S-q       window-close
 
-bind-key 4S-b window-vmaximize
-bind-key 4S-r restart
-bind-key 4S-e quit
+bind-key 4S-b       window-vmaximize
+bind-key 4S-r       restart
+bind-key 4S-e       quit
 
 
 ## speed 
@@ -78,10 +76,13 @@ bind-mouse 4-2 window-lower
 
 
 ## colors
-color menufg  "#f0f0f0"
-color menubg  "#0f0f0f"
-color font    "#f0f0f0"
-color selfont "#0f0f0f"
+color menufg        "#f0f0f0"
+color menubg        "#0f0f0f"
+color font          "#f0f0f0"
+color selfont       "#0f0f0f"
+
+color activeborder  "#f0f0f0"
+color inactiveborder"#f0f0f0"
 
 
 ## volume and stuff
@@ -90,3 +91,15 @@ bind-key XF86AudioRaiseVolume "/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%
 bind-key XF86AudioMute "/usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle"
 bind-key XF86MonBrightnessUp "/bin/xbacklight -inc 10"
 bind-key XF86MonBrightnessDown "/bin/xbacklight -dec 10"
+
+
+## spawen
+autogroup	2 	"Firefox-esr"
+autogroup	2 	"Firefox"
+autogroup	3 	"zathura"
+autogroup   6   "mpv"
+
+## commands
+command mcv         "xterm -e mpv --loop-playlist --shuffle /home/voidz/Music/mcvirgins/"
+command lofi        "xterm -e mpv --loop-playlist --shuffle /home/voidz/Music/lofi/anime/"
+command top         "xterm -e top"

@@ -1,0 +1,136 @@
+#!/bin/sh -f
+
+#
+# shee - A poor implementation of `tree` in plain `sh`.
+#
+
+die() {
+    printf '%s\n' "$@"
+    exit 1
+}
+
+log() {
+    indent="${2:-"├─ "}"
+
+    [ "$depth" -gt "0" ] && {
+        i=0
+
+        while [ "$i" -lt "$depth" ]; do
+            indent="│  $indent"
+            i=$((i + 1))
+        done
+    }
+
+    printf '%s%s\n' "$indent" "$1"
+}
+
+loop() {
+    cur=${1%%/}
+    depth=$((depth + 1))
+    last_depth=$depth
+
+    [ -d "$cur" ] || die "Not a directory: $cur"
+
+    { set +f; set -f -- "$cur"/.* "$cur"/*; }
+
+    for entity in "$@"; do
+        case ${entity##*/} in
+            .|..) ;;
+            *)
+                [ -f "$entity" ] && [ -z "$dirs_only" ] && {
+                    files="$files:$entity"
+                }
+
+                [ -d "$entity" ] && dirs="$dirs:$entity"
+            ;;
+        esac
+    done
+
+    if [ -n "$files" ]; then
+        # shellcheck disable=2086
+        { IFS=:; set -- ${files##:}; unset IFS; unset files; }
+
+        for file do
+            log "${file##*/}"
+        done
+    elif [ "$dirs_only" ]; then
+        last_depth="$((last_depth - 1))"
+    fi
+
+    [ -n "$dirs" ] && {
+        # shellcheck disable=2086
+        { IFS=:; set -- ${dirs##:}; unset IFS; unset dirs; }
+
+        for dir do
+            case " $ignore " in
+                *" ${dir##*/} "*) continue ;;
+                *) log "${dir##*/}/"; loop "$dir" ;;
+            esac
+        done
+    }
+
+    depth=$((depth - 1))
+}
+
+usage() {
+printf %s "\
+Usage: ${0##*/} [OPTION]... [DIRECTORY]...
+A poor implementation of \`tree\` in plain \`sh\`.
+
+With no DIRECTORY, default to using \`\$PWD\`.
+
+Exclude directories by assigning a colon separated list
+to SHEE_IGNORE_DIRS in \$SHELL's startup file.
+
+Example: export SHEE_IGNORE_DIRS=.git:cache:build
+
+  -d, --dirs-only          only show directories in output
+  -h, --help               display this help and exit
+"
+exit
+}
+
+main() {
+    depth=0
+    last_depth=0
+
+    case $1 in
+        '-d'|'--dirs-only') dirs_only=1; target=$2 ;;
+        '-h'|'--help') usage ;;
+        -*)
+            die "${0##*/}: invalid option -- '${1##*-}'" \
+                "Try '${0##*/} --help' for more information."
+        ;;
+        *) target=$1 ;;
+    esac
+
+    [ "$target" ] || target="$PWD"
+    [ -d "$target" ] || die "Not a directory: $target"
+
+    [ -n "$SHEE_IGNORE_DIRS" ] && {
+        # shellcheck disable=2086
+        { IFS=:; set -- $SHEE_IGNORE_DIRS; unset IFS; }
+
+        ignore=$*
+    }
+
+    log "${target##*/}/" "┌─ "
+    loop "$target"
+
+    n=0
+    end="└"
+
+    while [ "$n" -lt "$last_depth" ]; do
+        n=$((n + 1))
+
+        if [ "$n" -eq "$last_depth" ]; then
+            end="$end──┘"
+        else
+            end="$end──┴"
+        fi
+    done
+
+    printf '%s\n' "$end"
+}
+
+main "$@"
