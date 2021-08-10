@@ -15,30 +15,30 @@ font:
 
 mouse:
     hide_when_typing: true
+
+# Colors (Gruvbox Material Dark Medium)
 colors:
   primary:
-    background: '0x0f0f0f'
-    foreground: '0xf0f0f0'
+    background: '0x282828'
+    foreground: '0xdfbf8e'
 
   normal:
-    black:   '0x262626'
-    red:     '0xac8a8c'
-    green:   '0x8aac8b'
-    yellow:  '0xaca98a'
-    blue:    '0x8f8aac'
-    magenta: '0xac8aac'
-    cyan:    '0x8aabac'
-    white:   '0xe7e7e7'
-    orange:  '0xc6a679' #Here for reference
+    black:   '0x665c54'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xe78a4e'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    cyan:    '0x89b482'
+    white:   '0xdfbf8e'
 
   bright:
-    black:   '0x4c4c4c'
-    red:     '0xc49ea0'
-    green:   '0x9ec49f'
-    yellow:  '0xc4c19e'
-    blue:    '0xa39ec4'
-    magenta: '0xc49ec4'
-    cyan:    '0x9ec3c4'
-    white:   '0xf5f5f5'
-    orange:  '0xceb188' #Here for reference
+    black:   '0x928374'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xe3a84e'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    cyan:    '0x89b482'
+    white:   '0xdfbf8e'
 

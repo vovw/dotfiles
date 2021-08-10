@@ -13,17 +13,18 @@ unbind-key all
 moveamount 10
 fontname "Cascadia Mono:style=Regular:size=12"
 
+
 ## execs
 bind-key 4-Return       "alacritty"
 bind-key M-Return       "alacritty -e tmux"
 bind-key 4-n            "alacritty -e nvim /home/voidz/notes/"
 
-bind-key Print          ""
-bind-key S-Print        "scrot -q 100"
-bind-key C-Print        "maim -m 10 ~/scrot.png"
+bind-key Print          "scrot -s '/tmp/tmp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
+bind-key S-Print        "scrot '/tmp/tmpp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
+bind-key C-Print        "scrot -q 100 ~/img.png"
 
-bind-key 4-d           "dmenu_run -i -nb '#0f0f0f' -nf '#262626' -sb '#0f0f0f' -sf '#ac8a8c' -fn 'Cascadia Mono-16'"
-bind-key 4-comma        menu-exec
+bind-key 4-d           "dmenu_run -i -nb '#0f0f0f' -nf '#4c4c4c' -sb '#0f0f0f' -sf '#c49ea0' -fn 'Cascadia Mono-16'"
+bind-key 4-comma        menu-cmd
 
 ## groups
 bind-key 4-1 group-only-1
@@ -76,13 +77,13 @@ bind-mouse 4-2 window-lower
 
 
 ## colors
-color menufg        "#f0f0f0"
-color menubg        "#0f0f0f"
-color font          "#f0f0f0"
-color selfont       "#0f0f0f"
+color menufg        "#d4be98"
+color menubg        "#282828"
+color font          "#d4be98"
+color selfont       "#282828"
 
-color activeborder  "#f0f0f0"
-color inactiveborder"#f0f0f0"
+color activeborder  "#d4be98"
+color inactiveborder"#32302f"
 
 
 ## volume and stuff
@@ -97,9 +98,10 @@ bind-key XF86MonBrightnessDown "/bin/xbacklight -dec 10"
 autogroup	2 	"Firefox-esr"
 autogroup	2 	"Firefox"
 autogroup	3 	"zathura"
-autogroup   6   "mpv"
+
 
 ## commands
 command mcv         "xterm -e mpv --loop-playlist --shuffle /home/voidz/Music/mcvirgins/"
 command lofi        "xterm -e mpv --loop-playlist --shuffle /home/voidz/Music/lofi/anime/"
-command top         "xterm -e top"
+command top         "xterm -e htop"
+command tmux        "xterm -e tmux"

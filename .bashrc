@@ -1,8 +1,8 @@
 #!/bin/sh
 
-Red="$(tput bold)$(tput setaf 1)"      # Red
-Yellow="$(tput bold)$(tput setaf 3)"   # Yellow
-export PS1='\[$Red\]♥ \[$Red\]\W \[$Yellow\]\$\[\e[0m\] '
+
+
+export PS1="➜ "
 
 export SHEE_IGNORE_DIRS=.git:node_modules:build:.cache
 export HISTFILESIZE=10000
