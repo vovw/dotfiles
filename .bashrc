@@ -2,7 +2,7 @@
 
 
 
-export PS1="➜ "
+export PS1="λ "
 
 export SHEE_IGNORE_DIRS=.git:node_modules:build:.cache
 export HISTFILESIZE=10000

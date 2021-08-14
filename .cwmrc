@@ -4,7 +4,7 @@
 
 
 ## settings
-borderwidth 2
+borderwidth 0
 snapdist 10
 gap 10 10 10 10
 sticky yes
@@ -77,13 +77,13 @@ bind-mouse 4-2 window-lower
 
 
 ## colors
-color menufg        "#d4be98"
-color menubg        "#282828"
-color font          "#d4be98"
-color selfont       "#282828"
+color menufg        "#f0f0f0"
+color menubg        "#0f0f0f"
+color font          "#f0f0f0"
+color selfont       "#0f0f0f"
 
-color activeborder  "#d4be98"
-color inactiveborder"#32302f"
+color activeborder  "#f0f0f0"
+color inactiveborder"#0f0f0f"
 
 
 ## volume and stuff
