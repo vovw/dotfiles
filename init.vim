@@ -7,6 +7,7 @@ colorscheme rita
 
 set noruler
 set cursorline 
+set showtabline=2
 set hlsearch
 set incsearch
 set ignorecase
@@ -16,7 +17,7 @@ set shiftwidth=4
 set expandtab
 set scrolloff=7
 set laststatus=0
-set showtabline=2
 
 inoremap jj <Esc>
 noremap <leader>n :set invnumber invrelativenumber <CR>
+

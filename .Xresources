@@ -1,18 +1,23 @@
 ! vim:ft=xdefaults:
 
-!!! Xterm
-*internalBorder: 40
-*selectToClipboard: true
-*renderFont: true
-XTerm.vt100.faceName: xft:Cascadia Mono:size=12
-XTerm*geometry: 66x22
-Xterm*vt100.translations: #override \n\
-    Shift Ctrl <KeyPress> v:insert-selection(CLIPBOARD) \n\
-    Shift Ctrl <KeyPress> c:select-set(CLIPBOARD)
-
+!!! urxvt
+URxvt.termName:                   xterm-256color
+URxvt.font:                       xft:Cascadia Mono:size=10
+URxvt.geometry:                   75x28
+URxvt.internalBorder:             30
+URxvt.cursorUnderline:            true
+URxvt.scrollBar:                  false
+URxvt.scrollstyle:                plain
+URxvt.pointerBlank:               true
+URxvt.depth:                      24
+URxvt.iso14755:                   false
+URxvt.iso14755_52:                false
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 !!! colors
 *.foreground: #f0f0f0
 *.background: #0f0f0f
+
 *.color0:     #262626
 *.color8:     #4c4c4c
 *.color1:     #ac8a8c

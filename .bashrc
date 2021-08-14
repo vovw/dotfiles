@@ -13,5 +13,6 @@ alias la="ls -A --color=auto"
 alias ls='ls --color=auto'
 alias las="stat -c '%A %a %n' *"
 alias vi="nvim"
+alias imgclear="rm /tmp/*.png"
 
 export PF_INFO="title os host wm uptime kernel pkgs shell editor memory palette"

@@ -11,13 +11,14 @@ sticky yes
 snapdist 4
 unbind-key all
 moveamount 10
-fontname "Cascadia Mono:style=Regular:size=12"
+fontname "Cascadia Mono:size=8"
 
 
 ## execs
-bind-key 4-Return       "alacritty"
+bind-key 4-Return       "urxvt"
+bind-key 4S-Return      "urxvt -e tmux"
 bind-key M-Return       "alacritty -e tmux"
-bind-key 4-n            "alacritty -e nvim /home/voidz/notes/"
+bind-key 4-n            "urxvt -e nvim /home/voidz/notes/"
 
 bind-key Print          "scrot -s '/tmp/tmp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
 bind-key S-Print        "scrot '/tmp/tmpp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
@@ -101,7 +102,7 @@ autogroup	3 	"zathura"
 
 
 ## commands
-command mcv         "xterm -e mpv --loop-playlist --shuffle /home/voidz/Music/mcvirgins/"
-command lofi        "xterm -e mpv --loop-playlist --shuffle /home/voidz/Music/lofi/anime/"
-command top         "xterm -e htop"
-command tmux        "xterm -e tmux"
+command mcv         "urxvt -e mpv --loop-playlist --shuffle /home/voidz/Music/mcvirgins/"
+command lofi        "urxvt -e mpv --loop-playlist --shuffle /home/voidz/Music/lofi/anime/"
+command top         "urxvt -e htop"
+command tmux        "urxvt -e tmux"
