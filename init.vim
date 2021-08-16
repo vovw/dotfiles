@@ -20,4 +20,3 @@ set laststatus=0
 
 inoremap jj <Esc>
 noremap <leader>n :set invnumber invrelativenumber <CR>
-

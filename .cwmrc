@@ -15,10 +15,10 @@ fontname "Cascadia Mono:size=8"
 
 
 ## execs
-bind-key 4-Return       "urxvt"
-bind-key 4S-Return      "urxvt -e tmux"
-bind-key M-Return       "alacritty -e tmux"
-bind-key 4-n            "urxvt -e nvim /home/voidz/notes/"
+bind-key 4-Return       "st"
+bind-key 4S-Return      "st -e tmux"
+bind-key M-Return       "st -e tmux"
+bind-key 4-n            "st -e nvim /home/voidz/notes/"
 
 bind-key Print          "scrot -s '/tmp/tmp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
 bind-key S-Print        "scrot '/tmp/tmpp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
@@ -26,6 +26,7 @@ bind-key C-Print        "scrot -q 100 ~/img.png"
 
 bind-key 4-d           "dmenu_run -i -nb '#0f0f0f' -nf '#4c4c4c' -sb '#0f0f0f' -sf '#c49ea0' -fn 'Cascadia Mono-16'"
 bind-key 4-comma        menu-cmd
+bind-key M-l		"i3lock-fancy"
 
 ## groups
 bind-key 4-1 group-only-1
@@ -102,7 +103,8 @@ autogroup	3 	"zathura"
 
 
 ## commands
-command mcv         "urxvt -e mpv --loop-playlist --shuffle /home/voidz/Music/mcvirgins/"
-command lofi        "urxvt -e mpv --loop-playlist --shuffle /home/voidz/Music/lofi/anime/"
-command top         "urxvt -e htop"
-command tmux        "urxvt -e tmux"
+command mcv         "st -e mpv --loop-playlist --shuffle /home/voidz/Music/mcvirgins/"
+command lofi        "st -e mpv --loop-playlist --shuffle /home/voidz/Music/lofi/anime/"
+command top         "st -e htop"
+command tmux        "st -e tmux"
+command bat         "notify-send '$(bat)'"

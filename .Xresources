@@ -1,23 +1,20 @@
 ! vim:ft=xdefaults:
 
-!!! urxvt
-URxvt.termName:                   xterm-256color
-URxvt.font:                       xft:Cascadia Mono:size=10
-URxvt.geometry:                   75x28
-URxvt.internalBorder:             30
-URxvt.cursorUnderline:            true
-URxvt.scrollBar:                  false
-URxvt.scrollstyle:                plain
-URxvt.pointerBlank:               true
-URxvt.depth:                      24
-URxvt.iso14755:                   false
-URxvt.iso14755_52:                false
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+!!! xft
+Xft.antialias:	1
+Xft.hinting:	1
+Xft.autohint:	0
+Xft.hintstyle:	hintslight
+Xft.rgba:	rgb
+Xft.lcdfilter:	lcddefault
+
+!!! st
+st.font:                        Cascadia Mono:pixelsize=16
+st.borderpx:                    40
+
 !!! colors
 *.foreground: #f0f0f0
 *.background: #0f0f0f
-
 *.color0:     #262626
 *.color8:     #4c4c4c
 *.color1:     #ac8a8c
@@ -34,11 +31,3 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 *.color14:    #9ec3c4
 *.color7:     #e7e7e7
 *.color15:    #f5f5f5
-
-!!! xft
-Xft.antialias:	1
-Xft.hinting:	1
-Xft.autohint:	0
-Xft.hintstyle:	hintslight
-Xft.rgba:	rgb
-Xft.lcdfilter:	lcddefault
