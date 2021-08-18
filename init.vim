@@ -1,9 +1,10 @@
 call plug#begin('~/.vim/plugged')
     Plug 'ap/vim-css-color'
-    Plug 'voidz7/rita.vim' "mountain-vim fork but minimal 
+    Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
-colorscheme rita
+set termguicolors
+colorscheme gruvbox-material
 
 set noruler
 set cursorline 

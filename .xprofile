@@ -1,5 +1,6 @@
 xset r rate 200 50
 xrdb ~/.Xresources
-/home/voidz/.fehbg
 
-#xsetroot -solid '#ffb7c5'
+#/home/voidz/.fehbg
+
+xsetroot -solid '#1a181a'

@@ -8,10 +8,9 @@ borderwidth 0
 snapdist 10
 gap 10 10 10 10
 sticky yes
-snapdist 4
 unbind-key all
 moveamount 10
-fontname "Cascadia Mono:size=8"
+fontname "Cascadia Mono:size=15"
 
 
 ## execs
@@ -24,9 +23,9 @@ bind-key Print          "scrot -s '/tmp/tmp.png' -e 'xclip -selection clipboard 
 bind-key S-Print        "scrot '/tmp/tmpp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
 bind-key C-Print        "scrot -q 100 ~/img.png"
 
-bind-key 4-d           "dmenu_run -i -nb '#0f0f0f' -nf '#4c4c4c' -sb '#0f0f0f' -sf '#c49ea0' -fn 'Cascadia Mono-16'"
+bind-key 4-d           "dmenu_run -i -nb '#32302f' -nf '#d4be98' -sb '#32302f' -sf '#ea6962' -fn 'Cascadia Mono-16'"
 bind-key 4-comma        menu-cmd
-bind-key M-l		"i3lock-fancy"
+bind-key M-l		   "i3lock -c '#32302f'"
 
 ## groups
 bind-key 4-1 group-only-1
@@ -79,13 +78,13 @@ bind-mouse 4-2 window-lower
 
 
 ## colors
-color menufg        "#f0f0f0"
-color menubg        "#0f0f0f"
-color font          "#f0f0f0"
-color selfont       "#0f0f0f"
+color menufg        "#d4be98"
+color menubg        "#282828"
+color font          "#d4be98"
+color selfont       "#282828"
 
-color activeborder  "#f0f0f0"
-color inactiveborder"#0f0f0f"
+color activeborder  "#d4be98"
+color inactiveborder"#d4be98"
 
 
 ## volume and stuff
@@ -99,12 +98,12 @@ bind-key XF86MonBrightnessDown "/bin/xbacklight -dec 10"
 ## spawen
 autogroup	2 	"Firefox-esr"
 autogroup	2 	"Firefox"
-autogroup	3 	"zathura"
+autogroup	5 	"cmus"
 
 
 ## commands
-command mcv         "st -e mpv --loop-playlist --shuffle /home/voidz/Music/mcvirgins/"
-command lofi        "st -e mpv --loop-playlist --shuffle /home/voidz/Music/lofi/anime/"
-command top         "st -e htop"
+command mcv         "st -g 50x5 -e mpv --loop-playlist --shuffle /home/voidz/music/mcv/"
+command lofi        "st -g 50x5 -e mpv --loop-playlist --shuffle /home/voidz/music/lofi/"
+command top         "st -g 50x20 -e htop"
 command tmux        "st -e tmux"
-command bat         "notify-send '$(bat)'"
+command cmus        "st -e cmus"
