@@ -5,7 +5,6 @@ window:
   padding:
     x: 30
     y: 30
-
 font:
   normal:
     family: Cascadia Mono

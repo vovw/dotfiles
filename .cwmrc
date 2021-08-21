@@ -1,10 +1,5 @@
-##########
-# .cwmrc #
-##########
-
-
-## settings
-borderwidth 0
+## settings ##
+borderwidth 4
 snapdist 10
 gap 10 10 10 10
 sticky yes
@@ -13,11 +8,11 @@ moveamount 10
 fontname "Cascadia Mono:size=15"
 
 
-## execs
+## execs ##
 bind-key 4-Return       "st"
 bind-key 4S-Return      "st -e tmux"
-bind-key M-Return       "st -e tmux"
-bind-key 4-n            "st -e nvim /home/voidz/notes/"
+bind-key M-Return       "alacritty -e tmux"
+bind-key 4-n            "st -e nvim /home/voidz/notes"
 
 bind-key Print          "scrot -s '/tmp/tmp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
 bind-key S-Print        "scrot '/tmp/tmpp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
@@ -27,7 +22,7 @@ bind-key 4-d           "dmenu_run -i -nb '#32302f' -nf '#d4be98' -sb '#32302f' -
 bind-key 4-comma        menu-cmd
 bind-key M-l		   "i3lock -c '#32302f'"
 
-## groups
+## groups ##
 bind-key 4-1 group-only-1
 bind-key 4-2 group-only-2
 bind-key 4-3 group-only-3
@@ -42,22 +37,18 @@ bind-key 4S-9 window-movetogroup-5
 bind-key 4S-0 window-movetogroup-6
 
 
-## keybinds
+## keybinds ##
 bind-key M-Tab      window-cycle
 bind-key 4-Tab      group-cycle
-
 bind-key 4-f        window-maximize
 bind-key 4-space    window-fullscreen
-bind-key 4-o        window-snap-left
-bind-key 4-p        window-snap-right 
 bind-key 4S-q       window-close
-
 bind-key 4S-b       window-vmaximize
 bind-key 4S-r       restart
 bind-key 4S-e       quit
 
 
-## speed 
+## speed ##
 bind-key 4S-h window-resize-left
 bind-key 4S-j window-resize-down
 bind-key 4S-k window-resize-up
@@ -66,28 +57,27 @@ bind-key 4-h window-move-left-big
 bind-key 4-j window-move-down-big
 bind-key 4-k window-move-up-big
 bind-key 4-l window-move-right-big
+bind-key 4-o window-snap-left
+bind-key 4-p window-snap-right
 
-
-## mousebinds
+## mousebinds ##
 unbind-mouse all
-
 bind-mouse M-1 window-resize
 bind-mouse 4S-1 window-resize
 bind-mouse 4-1 window-move
 bind-mouse 4-2 window-lower
 
 
-## colors
+## colors ##
 color menufg        "#d4be98"
 color menubg        "#282828"
 color font          "#d4be98"
 color selfont       "#282828"
-
 color activeborder  "#d4be98"
 color inactiveborder"#d4be98"
 
 
-## volume and stuff
+## volume and stuff ##
 bind-key XF86AudioLowerVolume "/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%"
 bind-key XF86AudioRaiseVolume "/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%"
 bind-key XF86AudioMute "/usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle"
@@ -95,15 +85,16 @@ bind-key XF86MonBrightnessUp "/bin/xbacklight -inc 10"
 bind-key XF86MonBrightnessDown "/bin/xbacklight -dec 10"
 
 
-## spawen
+## spawen ##
 autogroup	2 	"Firefox-esr"
 autogroup	2 	"Firefox"
-autogroup	5 	"cmus"
 
 
-## commands
+## commands ##
 command mcv         "st -g 50x5 -e mpv --loop-playlist --shuffle /home/voidz/music/mcv/"
 command lofi        "st -g 50x5 -e mpv --loop-playlist --shuffle /home/voidz/music/lofi/"
 command top         "st -g 50x20 -e htop"
 command tmux        "st -e tmux"
 command cmus        "st -e cmus"
+command manager     "st -g 50x10 -e shfm"
+command sh          "st -g 80x6"
