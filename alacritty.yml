@@ -5,6 +5,7 @@ window:
   padding:
     x: 30
     y: 30
+
 font:
   normal:
     family: Cascadia Mono
@@ -41,4 +42,3 @@ colors:
     magenta: '0xd3869b'
     cyan:    '0x89b482'
     white:   '0xdfbf8e'
-
