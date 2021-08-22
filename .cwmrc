@@ -1,6 +1,6 @@
 ## settings ##
-borderwidth 4
-snapdist 10
+borderwidth 2
+snapdist 20
 gap 10 10 10 10
 sticky yes
 unbind-key all
@@ -13,14 +13,12 @@ bind-key 4-Return       "st"
 bind-key 4S-Return      "st -e tmux"
 bind-key M-Return       "alacritty -e tmux"
 bind-key 4-n            "st -e nvim /home/voidz/notes"
-
 bind-key Print          "scrot -s '/tmp/tmp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
 bind-key S-Print        "scrot '/tmp/tmpp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
 bind-key C-Print        "scrot -q 100 ~/img.png"
-
-bind-key 4-d           "dmenu_run -i -nb '#32302f' -nf '#d4be98' -sb '#32302f' -sf '#ea6962' -fn 'Cascadia Mono-16'"
+bind-key 4-d            "dmenu_run -i -nb '#32302f' -nf '#d4be98' -sb '#32302f' -sf '#ea6962' -fn 'Cascadia Mono-16'"
 bind-key 4-comma        menu-cmd
-bind-key M-l		   "i3lock -c '#32302f'"
+bind-key M-l		    "i3lock -c '#32302f'"
 
 ## groups ##
 bind-key 4-1 group-only-1
@@ -35,8 +33,6 @@ bind-key 4S-3 window-movetogroup-3
 bind-key 4S-8 window-movetogroup-4
 bind-key 4S-9 window-movetogroup-5
 bind-key 4S-0 window-movetogroup-6
-
-
 ## keybinds ##
 bind-key M-Tab      window-cycle
 bind-key 4-Tab      group-cycle
@@ -46,8 +42,6 @@ bind-key 4S-q       window-close
 bind-key 4S-b       window-vmaximize
 bind-key 4S-r       restart
 bind-key 4S-e       quit
-
-
 ## speed ##
 bind-key 4S-h window-resize-left
 bind-key 4S-j window-resize-down
@@ -59,7 +53,6 @@ bind-key 4-k window-move-up-big
 bind-key 4-l window-move-right-big
 bind-key 4-o window-snap-left
 bind-key 4-p window-snap-right
-
 ## mousebinds ##
 unbind-mouse all
 bind-mouse M-1 window-resize
