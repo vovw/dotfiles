@@ -16,7 +16,7 @@ bind-key 4-n            "st -e nvim /home/voidz/notes"
 bind-key Print          "scrot -s '/tmp/tmp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
 bind-key S-Print        "scrot '/tmp/tmpp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
 bind-key C-Print        "scrot -q 100 ~/img.png"
-bind-key 4-d            "dmenu_run -i -nb '#32302f' -nf '#d4be98' -sb '#32302f' -sf '#ea6962' -fn 'Cascadia Mono-16'"
+bind-key 4-d            "dmenu_run -i -nb '#282828' -nf '#d4be98' -sb '#32302f' -sf '#ea6962' -fn 'Cascadia Mono-16'"
 bind-key 4-comma        menu-cmd
 bind-key M-l		    "i3lock -c '#32302f'"
 
