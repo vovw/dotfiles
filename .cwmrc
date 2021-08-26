@@ -1,17 +1,12 @@
 ## settings ##
-borderwidth 2
+borderwidth 3
 snapdist 20
-gap 10 10 10 10
+gap 15 15 15 15
 sticky yes
-unbind-key all
-moveamount 10
 fontname "Cascadia Mono:size=15"
-
-
 ## execs ##
+unbind-key all
 bind-key 4-Return       "st"
-bind-key 4S-Return      "st -e tmux"
-bind-key M-Return       "alacritty -e tmux"
 bind-key 4-n            "st -e nvim /home/voidz/notes"
 bind-key Print          "scrot -s '/tmp/tmp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
 bind-key S-Print        "scrot '/tmp/tmpp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
@@ -19,20 +14,16 @@ bind-key C-Print        "scrot -q 100 ~/img.png"
 bind-key 4-d            "dmenu_run -i -nb '#282828' -nf '#d4be98' -sb '#32302f' -sf '#ea6962' -fn 'Cascadia Mono-16'"
 bind-key 4-comma        menu-cmd
 bind-key M-l		    "i3lock -c '#32302f'"
+bind-key M-n            "bat -n"
 
-## groups ##
-bind-key 4-1 group-only-1
-bind-key 4-2 group-only-2
-bind-key 4-3 group-only-3
-bind-key 4-8 group-only-4
-bind-key 4-9 group-only-5
-bind-key 4-0 group-only-6
-bind-key 4S-1 window-movetogroup-1
-bind-key 4S-2 window-movetogroup-2
-bind-key 4S-3 window-movetogroup-3
-bind-key 4S-8 window-movetogroup-4
-bind-key 4S-9 window-movetogroup-5
-bind-key 4S-0 window-movetogroup-6
+## colors ##
+color activeborder "#e3e1e4"
+color inactiveborder "#e3e1e4"
+color font "#e3e1e4"
+color selfont "#f85e84"
+color menufg "#2d2a2e"
+color menubg "#2d2a2e"
+
 ## keybinds ##
 bind-key M-Tab      window-cycle
 bind-key 4-Tab      group-cycle
@@ -59,30 +50,15 @@ bind-mouse M-1 window-resize
 bind-mouse 4S-1 window-resize
 bind-mouse 4-1 window-move
 bind-mouse 4-2 window-lower
-
-
-## colors ##
-color menufg        "#d4be98"
-color menubg        "#282828"
-color font          "#d4be98"
-color selfont       "#282828"
-color activeborder  "#d4be98"
-color inactiveborder"#d4be98"
-
-
 ## volume and stuff ##
 bind-key XF86AudioLowerVolume "/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%"
 bind-key XF86AudioRaiseVolume "/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%"
 bind-key XF86AudioMute "/usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle"
 bind-key XF86MonBrightnessUp "/bin/xbacklight -inc 10"
 bind-key XF86MonBrightnessDown "/bin/xbacklight -dec 10"
-
-
 ## spawen ##
 autogroup	2 	"Firefox-esr"
 autogroup	2 	"Firefox"
-
-
 ## commands ##
 command mcv         "st -g 50x5 -e mpv --loop-playlist --shuffle /home/voidz/music/mcv/"
 command lofi        "st -g 50x5 -e mpv --loop-playlist --shuffle /home/voidz/music/lofi/"
@@ -91,3 +67,16 @@ command tmux        "st -e tmux"
 command cmus        "st -e cmus"
 command manager     "st -g 50x10 -e shfm"
 command sh          "st -g 80x6"
+## groups ##
+bind-key 4-1 group-only-1
+bind-key 4-2 group-only-2
+bind-key 4-3 group-only-3
+bind-key 4-8 group-only-4
+bind-key 4-9 group-only-5
+bind-key 4-0 group-only-6
+bind-key 4S-1 window-movetogroup-1
+bind-key 4S-2 window-movetogroup-2
+bind-key 4S-3 window-movetogroup-3
+bind-key 4S-8 window-movetogroup-4
+bind-key 4S-9 window-movetogroup-5
+bind-key 4S-0 window-movetogroup-6

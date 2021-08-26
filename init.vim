@@ -1,16 +1,16 @@
 call plug#begin('~/.vim/plugged/')
 Plug 'sainnhe/gruvbox-material'
+Plug 'nanotech/jellybeans.vim'
+Plug 'fehawen/sl.vim'
 call plug#end()
 
 inoremap jk <Esc>
 
-set number
-set hidden
 set termguicolors
 colorscheme gruvbox-material
 
+set hidden
 set noruler
-set showtabline=2
 set cursorline 
 set scrolloff=7
 

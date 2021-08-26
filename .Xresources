@@ -7,15 +7,13 @@ Xft.autohint:	0
 Xft.hintstyle:	hintslight
 Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
-
 Xcursor.theme: macOSBigSur
 
 !!! st
 st.font:                        Cascadia Mono:pixelsize=16
-st.borderpx:                    40
+st.borderpx:                    60
 
 !!! colors
-
 *background: #282828
 *foreground: #d4be98
 *color0:  #32302f
