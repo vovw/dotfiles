@@ -3,16 +3,16 @@ env:
 
 window:
   padding:
-    x: 60
-    y: 60
+    x: 40
+    y: 40
 
 font:
   normal:
-    family: Cascadia Mono
+    family: Caskaydia Cove Nerd Font Mono
   bold:
-    family: Cascadia Mono
-  italic:
-    family: Cascadia Mono
+    family: Caskaydia Cove Nerd Font Mono
+  italic: 
+    family: Caskaydia Cove Nerd Font Mono
 
 mouse:
     hide_when_typing: true

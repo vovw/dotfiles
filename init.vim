@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged/')
+Plug 'ap/vim-css-color'
 Plug 'sainnhe/gruvbox-material'
-Plug 'nanotech/jellybeans.vim'
 Plug 'fehawen/sl.vim'
 call plug#end()
 

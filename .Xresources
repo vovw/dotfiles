@@ -10,8 +10,8 @@ Xft.lcdfilter:	lcddefault
 Xcursor.theme: macOSBigSur
 
 !!! st
-st.font:                        Cascadia Mono:pixelsize=16
-st.borderpx:                    60
+st.font:                        Caskaydia Cove Nerd Font Mono:pixelsize=16
+st.borderpx:                    40
 
 !!! colors
 *background: #282828
