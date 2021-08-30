@@ -16,7 +16,10 @@ font:
 
 mouse:
     hide_when_typing: true
-colors:
+
+
+schemes:
+  gruvbox_material_medium_dark: &gruvbox_material_medium_dark
     primary:
       background: '0x282828'
       foreground: '0xd4be98'
@@ -38,3 +41,28 @@ colors:
       magenta: '0xd3869b'
       cyan:    '0x89b482'
       white:   '0xd4be98'
+  gruvbox_material_medium_light: &gruvbox_material_medium_light
+    primary:
+      background: '0xfbf1c7'
+      foreground: '0x654735'
+    normal:
+      black:   '0x654735'
+      red:     '0xc14a4a'
+      green:   '0x6c782e'
+      yellow:  '0xb47109'
+      blue:    '0x45707a'
+      magenta: '0x945e80'
+      cyan:    '0x4c7a5d'
+      white:   '0xeee0b7'
+    bright:
+      black:   '0x654735'
+      red:     '0xc14a4a'
+      green:   '0x6c782e'
+      yellow:  '0xb47109'
+      blue:    '0x45707a'
+      magenta: '0x945e80'
+      cyan:    '0x4c7a5d'
+      white:   '0xeee0b7'
+
+# Apply the color scheme.
+colors: *gruvbox_material_medium_dark

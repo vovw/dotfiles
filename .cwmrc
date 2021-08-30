@@ -1,5 +1,5 @@
 ## settings ##
-borderwidth 3
+borderwidth 0
 snapdist 20
 gap 15 15 15 15
 sticky yes
