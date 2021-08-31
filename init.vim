@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged/')
 Plug 'ap/vim-css-color'
 Plug 'sainnhe/gruvbox-material'
-Plug 'fehawen/sl.vim'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 inoremap jk <Esc>
@@ -13,6 +13,7 @@ set hidden
 set noruler
 set cursorline 
 set scrolloff=7
+set showtabline=2
 
 set hlsearch
 set incsearch
@@ -23,3 +24,5 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set guicursor=
+
+let g:lightline = {'colorscheme' : 'gruvbox_material'}
