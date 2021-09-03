@@ -1,16 +1,15 @@
 ## settings ##
 borderwidth 0
-snapdist 20
+snapdialacritty 20
 gap 15 15 15 15
-sticky yes
+alacrittyicky yes
 fontname "Caskaydia Cove Nerd Font Mono:size=15"
 ## execs ##
 unbind-key all
-bind-key 4-Return       "st"
-bind-key 4-n            "st -e nvim /home/voidz/notes"
-bind-key Print          "scrot -s '/tmp/tmp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
-bind-key S-Print        "scrot '/tmp/tmpp.png' -e 'xclip -selection clipboard -target image/png -i $f'"
-bind-key C-Print        "scrot -q 100 ~/img.png"
+bind-key 4-Return       "alacritty"
+bind-key 4-n            "alacritty -e nvim /home/voidz/notes"
+bind-key Print          "flameshot gui"
+bind-key S-Print        "flameshot screen -c"
 bind-key 4-d            "dmenu_run -i -nb '#282828' -nf '#d4be98' -sb '#32302f' -sf '#ea6962' -fn 'Caskaydia Cove Nerd Font-16'"
 bind-key 4-comma        menu-cmd
 bind-key M-l		    "i3lock -c '#32302f'"
@@ -31,7 +30,7 @@ bind-key 4-f        window-maximize
 bind-key 4-space    window-fullscreen
 bind-key 4S-q       window-close
 bind-key 4S-b       window-vmaximize
-bind-key 4S-r       restart
+bind-key 4S-r       realacrittyart
 bind-key 4S-e       quit
 ## speed ##
 bind-key 4S-h window-resize-left
@@ -50,7 +49,7 @@ bind-mouse M-1 window-resize
 bind-mouse 4S-1 window-resize
 bind-mouse 4-1 window-move
 bind-mouse 4-2 window-lower
-## volume and stuff ##
+## volume and alacrittyuff ##
 bind-key XF86AudioLowerVolume "/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%"
 bind-key XF86AudioRaiseVolume "/usr/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%"
 bind-key XF86AudioMute "/usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle"
@@ -60,13 +59,13 @@ bind-key XF86MonBrightnessDown "/bin/xbacklight -dec 10"
 autogroup	2 	"Firefox-esr"
 autogroup	2 	"Firefox"
 ## commands ##
-command mcv         "st -g 50x5 -e mpv --loop-playlist --shuffle /home/voidz/music/mcv/"
-command lofi        "st -g 50x5 -e mpv --loop-playlist --shuffle /home/voidz/music/lofi/"
-command top         "st -g 50x20 -e htop"
-command tmux        "st -e tmux"
-command cmus        "st -e cmus"
-command manager     "st -g 50x10 -e shfm"
-command sh          "st -g 80x6"
+command mcv         "alacritty -g 50x5 -e mpv --loop-playlialacritty --shuffle /home/voidz/music/mcv/"
+command lofi        "alacritty -g 50x5 -e mpv --loop-playlialacritty --shuffle /home/voidz/music/lofi/"
+command top         "alacritty -g 50x20 -e htop"
+command tmux        "alacritty -e tmux"
+command cmus        "alacritty -e cmus"
+command manager     "alacritty -g 50x10 -e shfm"
+command sh          "alacritty -g 80x6"
 ## groups ##
 bind-key 4-1 group-only-1
 bind-key 4-2 group-only-2
