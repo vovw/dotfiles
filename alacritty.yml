@@ -1,57 +1,62 @@
 schemes:
+  onedark: &onedark
+    primary:
+      foreground: '0xabb2bf'
+      background: '0x282c34'
+    cursor:
+      text: '0x2c323c'
+      cursor: '0x5c6370'
+    selection:
+      text: CellForeground
+      background: '0x3e4452'
+    normal:
+      black:   '0x2c323c'
+      red:     '0xe06c75'
+      green:   '0x98c379'
+      yellow:  '0xe5c07b'
+      blue:    '0x61afef'
+      magenta: '0xc678dd'
+      cyan:    '0x56b6c2'
+      white:   '0x5c6370'
+    bright:
+      black:   '0x3e4452'
+      red:     '0xe06c75'
+      green:   '0x98c379'
+      yellow:  '0xe5c07b'
+      blue:    '0x61afef'
+      magenta: '0xc678dd'
+      cyan:    '0x56b6c2'
+      white:   '0xabb2bf'
   gruvbox_material_medium_dark: &gruvbox_material_medium_dark
     primary:
-      background: '0x282828'
-      foreground: '0xd4be98'
+      background: '#282828'
+      foreground: '#d4be98'
     normal:
-      black:   '0x3c3836'
-      red:     '0xea6962'
-      green:   '0xa9b665'
-      yellow:  '0xd8a657'
-      blue:    '0x7daea3'
-      magenta: '0xd3869b'
-      cyan:    '0x89b482'
-      white:   '0xd4be98'
+      black:   '#3c3836'
+      red:     '#ea6962'
+      green:   '#a9b665'
+      yellow:  '#d8a657'
+      blue:    '#7daea3'
+      magenta: '#d3869b'
+      cyan:    '#89b482'
+      white:   '#d4be98'
     bright:
-      black:   '0x3c3836'
-      red:     '0xea6962'
-      green:   '0xa9b665'
-      yellow:  '0xd8a657'
-      blue:    '0x7daea3'
-      magenta: '0xd3869b'
-      cyan:    '0x89b482'
-      white:   '0xd4be98'
-  gruvbox_material_medium_light: &gruvbox_material_medium_light
-    primary:
-      background: '0xfbf1c7'
-      foreground: '0x654735'
-    normal:
-      black:   '0x654735'
-      red:     '0xc14a4a'
-      green:   '0x6c782e'
-      yellow:  '0xb47109'
-      blue:    '0x45707a'
-      magenta: '0x945e80'
-      cyan:    '0x4c7a5d'
-      white:   '0xeee0b7'
-    bright:
-      black:   '0x654735'
-      red:     '0xc14a4a'
-      green:   '0x6c782e'
-      yellow:  '0xb47109'
-      blue:    '0x45707a'
-      magenta: '0x945e80'
-      cyan:    '0x4c7a5d'
-      white:   '0xeee0b7'
+      black:   '#3c3836'
+      red:     '#ea6962'
+      green:   '#a9b665'
+      yellow:  '#d8a657'
+      blue:    '#7daea3'
+      magenta: '#d3869b'
+      cyan:    '#89b482'
+      white:   '#d4be98'
 
 env:
   TERM: xterm-256color
 
 window:
   padding:
-    x: 40
-    y: 40
-  decorations: none
+    x: 12
+    y: 12
 
 font:
   normal:
@@ -64,5 +69,4 @@ font:
 mouse:
     hide_when_typing: true
 
-# Apply the color scheme.
 colors: *gruvbox_material_medium_dark

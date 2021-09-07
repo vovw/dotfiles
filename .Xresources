@@ -11,7 +11,7 @@ Xcursor.theme: macOSBigSur
 
 !!! st
 st.font:                        Caskaydia Cove Nerd Font Mono:pixelsize=16
-st.borderpx:                    40
+st.borderpx:                    16
 
 !!! colors
 *background: #282828
@@ -32,3 +32,4 @@ st.borderpx:                    40
 *color14: #89b482
 *color7:  #d4be98
 *color15: #d4be98
+*cursorColor: #d4be98

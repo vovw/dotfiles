@@ -1,16 +1,12 @@
-" plugs
-call plug#begin('~/.vim/plugged/')
-Plug 'ap/vim-css-color'
+call plug#begin('~/.config/nvim/plugged/')
+Plug 'preservim/nerdcommenter'
 Plug 'sainnhe/gruvbox-material'
-Plug 'voidz7/nita.vim/'
-Plug 'preservim/nerdtree'
 call plug#end()
 
-" colors
 set termguicolors
 colorscheme gruvbox-material
 
-" settings
+set mouse=a
 set hidden
 set noruler
 set cursorline 
@@ -24,8 +20,16 @@ set shiftwidth=4
 set expandtab
 set guicursor=
 
-
-" plugin settings
-
-" maps
+let mapleader=" "
 inoremap jk <Esc>
+map <Tab> :noh<CR>
+map <leader>n :Vex<CR>
+nnoremap <leader>b :buffers<CR>
+nnoremap <leader>l :bnext<CR>
+nnoremap <leader>h :bprev<CR>
+
+filetype plugin on
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25

@@ -12,5 +12,6 @@ alias la="ls -A --color=auto"
 alias ls='ls --color=auto'
 alias las="stat -c '%A %a %n' *"
 alias vi="nvim"
+alias ni="nvim --clean"
 
 export PF_INFO="title os host wm uptime kernel pkgs shell editor memory palette"
