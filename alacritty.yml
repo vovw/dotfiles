@@ -1,72 +1,113 @@
 schemes:
-  onedark: &onedark
+  oceanic: &oceanic
     primary:
-      foreground: '0xabb2bf'
-      background: '0x282c34'
+      background: '0x1b2b34'
+      foreground: '0xc0c5ce'
     cursor:
-      text: '0x2c323c'
-      cursor: '0x5c6370'
-    selection:
-      text: CellForeground
-      background: '0x3e4452'
+      text: '0x1b2b34'
+      cursor: '0xc0c5ce'
     normal:
-      black:   '0x2c323c'
-      red:     '0xe06c75'
-      green:   '0x98c379'
-      yellow:  '0xe5c07b'
-      blue:    '0x61afef'
-      magenta: '0xc678dd'
-      cyan:    '0x56b6c2'
-      white:   '0x5c6370'
+      black:   '0x1b2b34'
+      red:     '0xec5f67'
+      green:   '0x99c794'
+      yellow:  '0xfac863'
+      blue:    '0x6699cc'
+      magenta: '0xc594c5'
+      cyan:    '0x5fb3b3'
+      white:   '0xc0c5ce'
     bright:
-      black:   '0x3e4452'
-      red:     '0xe06c75'
-      green:   '0x98c379'
-      yellow:  '0xe5c07b'
-      blue:    '0x61afef'
-      magenta: '0xc678dd'
-      cyan:    '0x56b6c2'
-      white:   '0xabb2bf'
-  gruvbox_material_medium_dark: &gruvbox_material_medium_dark
+      black:   '0x65737e'
+      red:     '0xec5f67'
+      green:   '0x99c794'
+      yellow:  '0xfac863'
+      blue:    '0x6699cc'
+      magenta: '0xc594c5'
+      cyan:    '0x5fb3b3'
+      white:   '0xd8dee9'
+            
+  zenbones: &zenbones
     primary:
-      background: '#282828'
-      foreground: '#d4be98'
+      background: '#F0EDEC'
+      foreground: '#2C363C'
     normal:
-      black:   '#3c3836'
-      red:     '#ea6962'
-      green:   '#a9b665'
-      yellow:  '#d8a657'
-      blue:    '#7daea3'
-      magenta: '#d3869b'
-      cyan:    '#89b482'
-      white:   '#d4be98'
+      black:   '#2C363C'
+      red:     '#A8334C'
+      green:   '#617437'
+      yellow:  '#944927'
+      blue:    '#286486'
+      magenta: '#88507D'
+      cyan:    '#3B8992'
+      white:   '#F0EDEC'
     bright:
-      black:   '#3c3836'
-      red:     '#ea6962'
-      green:   '#a9b665'
-      yellow:  '#d8a657'
-      blue:    '#7daea3'
+      black:   '#44525B'
+      red:     '#9C2842'
+      green:   '#55672A'
+      yellow:  '#87411E'
+      blue:    '#1F5A7A'
+      magenta: '#864079'
+      cyan:    '#2F7C85'
+      white:   '#DCD2CE'
+       
+  gruvbox: &gruvbox
+    primary:
+      background:        '#282828'
+      foreground:        '#ebdbb2'
+      bright_foreground: '#fbf1c7'
+      dim_foreground:    '#a89984'
+    cursor:
+      text:   CellBackground
+      cursor: CellForeground
+    vi_mode_cursor:
+      text:   CellBackground
+      cursor: CellForeground
+    selection:
+      text:       CellBackground
+      background: CellForeground
+    bright:
+      black:   '#928374'
+      red:     '#fb4934'
+      green:   '#b8bb26'
+      yellow:  '#fabd2f'
+      blue:    '#83a598'
       magenta: '#d3869b'
-      cyan:    '#89b482'
-      white:   '#d4be98'
-
+      cyan:    '#8ec07c'
+      white:   '#ebdbb2'
+    normal:
+      black:   '#282828'
+      red:     '#cc241d'
+      green:   '#98971a'
+      yellow:  '#d79921'
+      blue:    '#458588'
+      magenta: '#b16286'
+      cyan:    '#689d6a'
+      white:   '#a89984'
+    dim:
+      black:   '#32302f'
+      red:     '#9d0006'
+      green:   '#79740e'
+      yellow:  '#b57614'
+      blue:    '#076678'
+      magenta: '#8f3f71'
+      cyan:    '#427b58'
+      white:   '#928374'
+        
+#------------------------------------------#
 env:
   TERM: xterm-256color
-
 window:
   padding:
     x: 12
     y: 12
-
 font:
   normal:
-    family: Caskaydia Cove Nerd Font Mono
+    family: hermit
   bold:
-    family: Caskaydia Cove Nerd Font Mono
+    family: hermit
   italic: 
-    family: Caskaydia Cove Nerd Font Mono
+    family: hermit
+  size: 16
 
 mouse:
     hide_when_typing: true
 
-colors: *gruvbox_material_medium_dark
+colors: *oceanic

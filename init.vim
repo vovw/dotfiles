@@ -1,35 +1,30 @@
-call plug#begin('~/.config/nvim/plugged/')
-Plug 'preservim/nerdcommenter'
-Plug 'sainnhe/gruvbox-material'
-call plug#end()
-
-set termguicolors
-colorscheme gruvbox-material
-
-set mouse=a
-set hidden
-set noruler
+syntax on
+set laststatus=0
+set number
+set guicursor=
 set cursorline 
 set scrolloff=7
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-set tabstop=4
-set shiftwidth=4
 set expandtab
-set guicursor=
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
+set autoindent
+set cindent
 
-let mapleader=" "
-inoremap jk <Esc>
-map <Tab> :noh<CR>
-map <leader>n :Vex<CR>
-nnoremap <leader>b :buffers<CR>
-nnoremap <leader>l :bnext<CR>
-nnoremap <leader>h :bprev<CR>
+noremap // :noh<CR>
+noremap <TAB> %
+inoremap {<CR> {<CR>}<ESC>k$A<CR>
+nnoremap <F9> :w <bar> :! g++ % -std=c++11 -O2 -Wall && ./a.out < inp<CR>
 
-filetype plugin on
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
+autocmd BufNewFile a.cpp 0r /home/voidz/Documents/kode/stuff/Template.cpp
+
+"call plug#begin('~/.config/nvim/plugged')
+"Plug 'mcchrish/zenbones.nvim'
+"call plug#end()
+
+set termguicolors
+colorscheme OceanicNext

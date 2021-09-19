@@ -8,28 +8,3 @@ Xft.hintstyle:	hintslight
 Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
 Xcursor.theme: macOSBigSur
-
-!!! st
-st.font:                        Caskaydia Cove Nerd Font Mono:pixelsize=16
-st.borderpx:                    16
-
-!!! colors
-*background: #282828
-*foreground: #d4be98
-*color0:  #32302f
-*color8:  #32302f
-*color1:  #ea6962
-*color9:  #ea6962
-*color2:  #a9b665
-*color10: #a9b665
-*color3:  #e78a4e
-*color11: #e78a4e
-*color4:  #7daea3
-*color12: #7daea3
-*color5:  #d3869b
-*color13: #d3869b
-*color6:  #89b482
-*color14: #89b482
-*color7:  #d4be98
-*color15: #d4be98
-*cursorColor: #d4be98
