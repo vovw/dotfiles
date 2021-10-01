@@ -10,6 +10,7 @@ export EDITOR="nvim"
 
 alias comp="cd ~/Documents/kode/"
 alias la="ls -A --color=auto"
+alias ll="ls -lA --color=auto"
 alias ls="ls --color=auto"
 alias las="stat -c '%A %a %n' *"
 alias ni="vim --clean"

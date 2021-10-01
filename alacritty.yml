@@ -1,4 +1,26 @@
 schemes:
+  bobaa: &bobaa
+    primary:
+      background: '#1C1918'
+      foreground: '#B4BDC3'
+    normal:
+      black:   '#1C1918'
+      red:     '#DE6E7C'
+      green:   '#819B69'
+      yellow:  '#B77E64'
+      blue:    '#6099C0'
+      magenta: '#B279A7'
+      cyan:    '#66A5AD'
+      white:   '#B4BDC3'
+    bright:
+      black:   '#3E3834'
+      red:     '#E8838F'
+      green:   '#8BAE68'
+      yellow:  '#D68C67'
+      blue:    '#61ABDA'
+      magenta: '#CF86C1'
+      cyan:    '#65B8C1'
+      white:   '#888F94' 
   oceanic: &oceanic
     primary:
       background: '0x1b2b34'
@@ -24,7 +46,29 @@ schemes:
       magenta: '0xc594c5'
       cyan:    '0x5fb3b3'
       white:   '0xd8dee9'
-            
+  gruvbox: &gruvbox
+    primary:
+      background: '0x282828'
+      foreground: '0xdfbf8e'
+    normal:
+      black:   '0x665c54'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xe78a4e'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xdfbf8e'
+
+    bright:
+      black:   '0x928374'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xe3a84e'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xdfbf8e'
   zenbones: &zenbones
     primary:
       background: '#F0EDEC'
@@ -47,49 +91,6 @@ schemes:
       magenta: '#864079'
       cyan:    '#2F7C85'
       white:   '#DCD2CE'
-       
-  gruvbox: &gruvbox
-    primary:
-      background:        '#282828'
-      foreground:        '#ebdbb2'
-      bright_foreground: '#fbf1c7'
-      dim_foreground:    '#a89984'
-    cursor:
-      text:   CellBackground
-      cursor: CellForeground
-    vi_mode_cursor:
-      text:   CellBackground
-      cursor: CellForeground
-    selection:
-      text:       CellBackground
-      background: CellForeground
-    bright:
-      black:   '#928374'
-      red:     '#fb4934'
-      green:   '#b8bb26'
-      yellow:  '#fabd2f'
-      blue:    '#83a598'
-      magenta: '#d3869b'
-      cyan:    '#8ec07c'
-      white:   '#ebdbb2'
-    normal:
-      black:   '#282828'
-      red:     '#cc241d'
-      green:   '#98971a'
-      yellow:  '#d79921'
-      blue:    '#458588'
-      magenta: '#b16286'
-      cyan:    '#689d6a'
-      white:   '#a89984'
-    dim:
-      black:   '#32302f'
-      red:     '#9d0006'
-      green:   '#79740e'
-      yellow:  '#b57614'
-      blue:    '#076678'
-      magenta: '#8f3f71'
-      cyan:    '#427b58'
-      white:   '#928374'
         
 #------------------------------------------#
 env:
@@ -100,14 +101,14 @@ window:
     y: 12
 font:
   normal:
-    family: hermit
+    family: Caskaydia Cove Nerd Font Mono
   bold:
-    family: hermit
+    family: Caskaydia Cove Nerd Font Mono
   italic: 
-    family: hermit
+    family: Caskaydia Cove Nerd Font Mono
   size: 16
 
 mouse:
     hide_when_typing: true
 
-colors: *oceanic
+colors: *bobaa
