@@ -1,0 +1,22 @@
+theme = "monokai"
+
+[editor]
+# line-number = "relative"
+bufferline = "multiple"
+cursorline = true
+
+[keys.normal.backspace]
+x = ":buffer-close!"
+o = ":buffer-close-others"
+
+[keys.normal.space]
+u = ":update"
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name", "diagnostics"]
+right = ["selections", "position"]
+
+[keys.insert]
+# j = { k = "normal_mode" } # Maps `jk` to exit insert mode
+j = { j = "normal_mode" } # Maps `jk` to exit insert mode
