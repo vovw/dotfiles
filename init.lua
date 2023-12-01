@@ -2,11 +2,10 @@ local use = require('packer').use
 
 require('packer').startup(function()
   use 'echasnovski/mini.nvim'
+  use 'bling/vim-bufferline'
   use 'nyoom-engineering/oxocarbon.nvim'
-
   use 'wbthomason/packer.nvim'   -- Package manager
   use 'neovim/nvim-lspconfig'    -- Configurations for Nvim LSP
-
   -- Very powerful picker
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -73,15 +72,18 @@ end
 require('lspconfig')['clangd'].setup{
     on_attach = on_attach,
 }
--- require('lspconfig')['gopls'].setup{
---     on_attach = on_attach,
--- }
+require('lspconfig')['gopls'].setup{
+    on_attach = on_attach,
+}
 
 local set = vim.opt 
-vim.cmd.colorscheme "oxocarbon"
+vim.cmd.colorscheme "gruvbox"
+set.termguicolors = true
 set.tabstop = 4
-set.laststatus=0
+-- set.laststatus=0
 set.cc='88'
 set.softtabstop = 4
 set.shiftwidth = 4
 set.mouse=""
+vim.keymap.set('n', '<F9>', "<esc>:! g++ % -std=c++11 -O2 -Wall && ./a.out < inp<CR>" ,opts) 
+vim.keymap.set('n', '<F10>', "<esc>:! cat % | pbcopy<CR>" ,opts) 
