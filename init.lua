@@ -1,15 +1,15 @@
 local use = require('packer').use
 
 require('packer').startup(function()
+  use 'rafi/awesome-vim-colorschemes'
+	
   use 'echasnovski/mini.nvim'
-  use 'bling/vim-bufferline'
-  use 'nyoom-engineering/oxocarbon.nvim'
   use 'wbthomason/packer.nvim'   -- Package manager
   use 'neovim/nvim-lspconfig'    -- Configurations for Nvim LSP
   -- Very powerful picker
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
-    requires = {{
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
+   requires = {{
     'nvim-lua/plenary.nvim',
     'BurntSushi/ripgrep',
     'nvim-treesitter/nvim-treesitter'
@@ -21,13 +21,13 @@ end)
 require('mini.basics').setup()
 require('mini.comment').setup()
 require('mini.completion').setup()
--- require('mini.starter').setup()
+require('mini.tabline').setup()
 
 
 ---- mappings
 local builtin = require('telescope.builtin')
 local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<tab>', "<esc>:tabn<cr>" ,opts) -- telescope
+vim.keymap.set('n', '<tab>', "<esc>:bn<cr>" ,opts) -- telescope
 vim.keymap.set('n', '<space>ff', builtin.find_files, {})
 vim.keymap.set('n', '<space>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<space>fb', builtin.buffers, {})
@@ -77,10 +77,10 @@ require('lspconfig')['gopls'].setup{
 }
 
 local set = vim.opt 
-vim.cmd.colorscheme "gruvbox"
-set.termguicolors = true
+vim.cmd.colorscheme "angr"
+set.termguicolors = false
 set.tabstop = 4
--- set.laststatus=0
+set.laststatus=0
 set.cc='88'
 set.softtabstop = 4
 set.shiftwidth = 4
