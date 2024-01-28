@@ -1,59 +1,63 @@
-local use = require('packer').use
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-require('packer').startup(function()
-  use 'rafi/awesome-vim-colorschemes'
-	
-  use 'echasnovski/mini.nvim'
-  use 'wbthomason/packer.nvim'   -- Package manager
-  use 'neovim/nvim-lspconfig'    -- Configurations for Nvim LSP
-  -- Very powerful picker
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.4',
-   requires = {{
-    'nvim-lua/plenary.nvim',
-    'BurntSushi/ripgrep',
-    'nvim-treesitter/nvim-treesitter'
-    }}
-  }
-end)
+
+
+vim.g.mapleader = " "
+
+require("lazy").setup({
+    "nvim-lua/plenary.nvim",
+    "neovim/nvim-lspconfig",
+    "nvim-telescope/telescope.nvim",
+    "echasnovski/mini.nvim",
+    "nvim-treesitter/nvim-treesitter",
+    "sainnhe/everforest"
+
+},{})
+
 
 
 require('mini.basics').setup()
+require('mini.files').setup()
 require('mini.comment').setup()
 require('mini.completion').setup()
 require('mini.tabline').setup()
+require('mini.pick').setup()
+require('mini.starter').setup()
+require('mini.trailspace').setup()
+
 
 
 ---- mappings
 local builtin = require('telescope.builtin')
 local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<tab>', "<esc>:bn<cr>" ,opts) -- telescope
+-- telescope
 vim.keymap.set('n', '<space>ff', builtin.find_files, {})
 vim.keymap.set('n', '<space>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<space>fb', builtin.buffers, {})
 vim.keymap.set('n', '<space>fh', builtin.help_tags, {})
-
 -- LSP
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '<space>m', "Go<esc>:put =strftime('%Y-%m-%d')<cr>o============<cr>", opts)
 
-vim.api.nvim_create_autocmd({"BufNew", "InsertEnter"}, {
-  callback = function(args)
-    vim.diagnostic.disable(args.buf)
-  end
-})
-vim.api.nvim_create_autocmd({"BufWrite"}, {
-  callback = function(args)
-    vim.diagnostic.enable(args.buf)
-  end
-})
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
+-- map the following keys only after the lsp attached hehe
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
@@ -66,24 +70,11 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 end
 
--- require('lspconfig')['zls'].setup{
---     on_attach = on_attach,
+-- require('lspconfig')['clangd'].setup{
+-- 	on_attach = on_attach,
 -- }
-require('lspconfig')['clangd'].setup{
-    on_attach = on_attach,
-}
-require('lspconfig')['gopls'].setup{
-    on_attach = on_attach,
-}
 
-local set = vim.opt 
-vim.cmd.colorscheme "angr"
-set.termguicolors = false
-set.tabstop = 4
-set.laststatus=0
-set.cc='88'
-set.softtabstop = 4
-set.shiftwidth = 4
-set.mouse=""
-vim.keymap.set('n', '<F9>', "<esc>:! g++ % -std=c++11 -O2 -Wall && ./a.out < inp<CR>" ,opts) 
-vim.keymap.set('n', '<F10>', "<esc>:! cat % | pbcopy<CR>" ,opts) 
+vim.opt.tabstop=4
+vim.opt.softtabstop=4
+vim.opt.shiftwidth=4
+vim.opt.scrolloff = 10
