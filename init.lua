@@ -10,13 +10,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-
 require("lazy").setup({
-    {
+  {
     'echasnovski/mini.nvim',
     config = function()
       require('mini.ai').setup { n_lines = 500 }
-      require('mini.surround').setup()
+      require('mini.files').setup()
+      -- require('mini.completion').setup()
       local statusline = require 'mini.statusline'
       statusline.setup { use_icons = true }
       statusline.section_location = function()
@@ -25,12 +25,13 @@ require("lazy").setup({
     end,
   },
   'neovim/nvim-lspconfig',
+  'rebelot/kanagawa.nvim',
+  'nvim-treesitter/nvim-treesitter',
   'nvim-telescope/telescope.nvim',
-  'nvim-lua/plenary.nvim'
-
+  'nvim-lua/plenary.nvim',
 })
 
-
+-- Rest of your configuration remains the same
 vim.g.mapleader = " "
 vim.opt.number = false
 vim.opt.termguicolors = false
@@ -38,9 +39,11 @@ vim.opt.mouse = "a"
 vim.opt.showmode = false
 vim.opt.wrap = false
 vim.opt.breakindent = true
+vim.opt.guicursor = ""
 vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.g.afterglow_inherit_background = 1
 -- vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
@@ -52,11 +55,12 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
-vim.cmd 'colorscheme molokai'
 
+vim.cmd.colorscheme "kanagawa-dragon"
 
 local builtin = require('telescope.builtin')
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "<space>e", "<cmd>lua MiniFiles.open()<CR>")
 vim.keymap.set('n', '<space>ff', builtin.find_files, {})
 vim.keymap.set('n', '<space>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<space>fb', builtin.buffers, {})
