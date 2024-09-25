@@ -8,29 +8,32 @@ macos-titlebar-style = native
 window-decoration = false
 macos-non-native-fullscreen = true
 
+theme = "Builtin Solarized light"
 
-background = #181616
-foreground = #c5c9c5
-selection-background = #2D4F67
-selection-foreground = #C8C093
+# black
+palette = 0=#161616
+palette = 8=#262626
+# red
+palette = 1=#ee5396
+palette = 9=#ff7eb6
+# green
+palette = 2=#42be65
+palette = 10=#82cfff
+# yellow
+palette = 3=#33b1ff
+palette = 11=#78a9ff
+# blue
+palette = 4=#08bdba
+palette = 12=#3ddbd9
+# purple
+palette = 5=#be95ff
+palette = 13=#82cfff
+# aqua
+palette = 6=#3ddbd9
+palette = 14=#08bdba
+# white
+palette = 7=#dde1e6
+palette = 15=#f2f4f8
 
-palette = 0=#0d0c0c
-palette = 1=#c4746e
-palette = 2=#8a9a7b
-palette = 3=#c4b28a
-palette = 4=#8ba4b0
-palette = 5=#a292a3
-palette = 6=#8ea4a2
-palette = 7=#C8C093
-
-palette = 8=#a6a69c
-palette = 9=#E46876
-palette = 10=#87a987
-palette = 11=#E6C384
-palette = 12=#7FB4CA
-palette = 13=#938AA9
-palette = 14=#7AA89F
-palette = 15=#c5c9c5
-
-palette = 16=#b6927b
-palette = 17=#b98d7b
+background = #161616
+foreground = #f2f4f8
