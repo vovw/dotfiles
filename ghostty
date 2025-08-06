@@ -1,7 +1,7 @@
 title = " "
 cursor-style-blink = false
 shell-integration-features = no-cursor
-font-family = Liga SFMono Nerd Font
+font-family = SF Mono
 
 window-decoration = true
 macos-non-native-fullscreen = true
@@ -9,6 +9,4 @@ macos-non-native-fullscreen = true
 cursor-style = block
 
 
-#theme = "iterm2 Solarized light"
-#theme="/Applications/Ghostty.app/Contents/Resources/ghostty/themes/xcodedarkhc"
-theme="tokyonight-day"
+theme = "oxocarbon"
