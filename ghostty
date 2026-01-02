@@ -1,12 +1,10 @@
-title = " "
-cursor-style-blink = false
-shell-integration-features = no-cursor
-font-family = SF Mono
-
-window-decoration = true
-macos-non-native-fullscreen = true
-
+font-family = SFMono Nerd Font
+font-size = 16
+theme = Gruvbox Dark Hard
+adjust-cell-height = 35%
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+window-padding-balance = true
+window-save-state = always
 cursor-style = block
-
-
-theme = "oxocarbon"
+shell-integration-features = no-cursor
