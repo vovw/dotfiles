@@ -1,6 +1,7 @@
-font-family = SFMono Nerd Font
-font-size = 16
-theme = Gruvbox Dark Hard
+##font-family = Commit Mono
+font-family = Ioskeley Mono
+font-size = 18
+
 adjust-cell-height = 35%
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 2
@@ -8,3 +9,11 @@ window-padding-balance = true
 window-save-state = always
 cursor-style = block
 shell-integration-features = no-cursor
+keybind = shift+enter=text:\x1b\r
+
+
+window-padding-x = 8
+window-padding-y = 8
+
+theme = Afterglow
+window-colorspace = display-p3

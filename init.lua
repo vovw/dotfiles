@@ -15,7 +15,7 @@ vim.opt.confirm = true
 vim.opt.autoread = true
 
 -- UI
-vim.opt.termguicolors = true
+vim.opt.termguicolors = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes:1"
@@ -223,19 +223,20 @@ local plugins = {
 
   -- Colorscheme
   {
-    "sainnhe/gruvbox-material",
+    "https://github.com/danilo-augusto/vim-afterglow",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.g.gruvbox_material_background = "hard"
-      vim.g.gruvbox_material_foreground = "mix"
-      vim.cmd("colorscheme gruvbox-material")
+      -- Vimscript: let g:afterglow_inherit_background=1
+      vim.g.afterglow_inherit_background = 1
+      vim.cmd("colorscheme afterglow")
+
     end,
   },
 }
 
 require("lazy").setup(plugins, {
-  install = { missing = true, colorscheme = { "gruvbox-material" } },
+  install = { missing = true, colorscheme = { "catppuccin" } },
   checker = { enabled = true, notify = false },
   change_detection = { enabled = true, notify = false },
   performance = {
